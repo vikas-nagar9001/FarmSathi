@@ -366,7 +366,7 @@ footer p {
 /* ---- All Pages CSS ---- */
 
 .full-title{
-	padding: 150px 0px;
+	padding: 70px 0px;
 	background: url(../images/all-title-bg.jpg) no-repeat center;
 	position: relative;
 	background-size: cover;
@@ -393,7 +393,12 @@ footer p {
 }
 
 .breadcrumb-main .breadcrumb{
+
 	background: #4eae3a;
+	height: 50px;
+	align-items: center;
+	font-size: 18px;
+	margin-top: 50px;
 }
 .breadcrumb-main .breadcrumb li a{
 	color: #ffffff;
