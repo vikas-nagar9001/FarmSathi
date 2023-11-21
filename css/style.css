@@ -226,10 +226,11 @@ button.btn-secondary:hover{
 
 .footer { 
 	width:100%; 
-	background-color:#263238; 
-	min-height:250px; 
+	background-color:#283238; 
+	min-height:0px; 
 	padding:10px 0px 25px 0px;
 	}
+	
 .pt2 { 
 	padding-top:40px ;
 	margin-bottom:20px ;
