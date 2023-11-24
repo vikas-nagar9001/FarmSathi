@@ -65,7 +65,7 @@
 
 
 	<!-- Page Content -->
-	 <div class="container">
+	<div class="container">
 		<div class="breadcrumb-main">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
@@ -76,35 +76,129 @@
 		</div>
 
 
-<!-- Write page code here -->
+		<!-- Write page code here -->
+
+		<p>Price-List</p>
+		<div class="row">
+			<div class="col-12 col-sm-2 col-md-2">
+				<div class="form-group">
+					<label for="input1" class="control-label required">State <span style="color:red">*</span></label>
+					<select name="ctl00$ContentPlaceHolder1$DropDownState"
+						onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$DropDownState\',\'\')', 0)"
+						id="ContentPlaceHolder1_DropDownState" class="form-control">
+						<option value="0">MADHYA PRADESH</option>
+						<!-- <option value="35">MADHYA PRADESH</option>
+									<option value="9">UTTAR PRADESH</option>
+									<option value="24">GUJARAT</option>
+									<option value="8">RAJASTHAN</option>
+									<option value="28">ANDHRA PRADESH</option> -->
+
+					</select>
+					<span data-val-controltovalidate="ContentPlaceHolder1_DropDownState" data-val-display="Dynamic"
+						data-val-validationgroup="vgRec" id="ContentPlaceHolder1_rfvDropDownState" class="star_red"
+						data-val="true" data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid"
+						data-val-initialvalue="0" style="display:none;"><span>* Select State</span></span>
+				</div>
+			</div>
+			<div class="col-12 col-sm-2 col-md-2">
+				<div class="form-group">
+					<label for="input1" class="control-label required">District <span style="color:red">*</span></label>
+					<select name="ctl00$ContentPlaceHolder1$DropDownDistrict"
+						onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$DropDownDistrict\',\'\')', 0)"
+						id="ContentPlaceHolder1_DropDownDistrict" class="form-control">
+						<option value="0">--Select District--</option>
+
+						<option value="667">DEWAS</option>
+						<option value="435">UJJAIN</option>
+						<option value="410">INDORE</option>
+						<option value="396">BHOPAL</option>
+						<option value="414">KHARGONE</option>
+						<option value="411">JABALPUR</option>
 
 
-		<div class="pagination_bar">
-			<!-- Pagination -->
-			<ul class="pagination justify-content-center">
-				<li class="page-item">
-					<a class="page-link" href="#" aria-label="Previous">
-						<span aria-hidden="true">&laquo;</span>
-						<span class="sr-only">Previous</span>
-					</a>
-				</li>
-				<li class="page-item">
-					<a class="page-link" href="#">1</a>
-				</li>
-				<li class="page-item">
-					<a class="page-link" href="#">2</a>
-				</li>
-				<li class="page-item">
-					<a class="page-link" href="#">3</a>
-				</li>
-				<li class="page-item">
-					<a class="page-link" href="#" aria-label="Next">
-						<span aria-hidden="true">&raquo;</span>
-						<span class="sr-only">Next</span>
-					</a>
-				</li>
-			</ul>
+					</select>
+					<span data-val-controltovalidate="ContentPlaceHolder1_DropDownDistrict" data-val-display="Dynamic"
+						data-val-validationgroup="vgRec" id="ContentPlaceHolder1_rfvDropDownDistrict" class="star_red"
+						data-val="true" data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid"
+						data-val-initialvalue="0" style="display:none;"><span>* Select
+							District</span></span>
+				</div>
+			</div>
+			<div class="col-12 col-sm-2 col-md-2">
+				<div class="form-group">
+					<label for="input1" class="control-label required">Krashi Upaj Mandi <span
+							style="color:red">*</span></label>
+					<select name="ctl00$ContentPlaceHolder1$DropDownSubDistrict"
+						onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$DropDownSubDistrict\',\'\')', 0)"
+						id="ContentPlaceHolder1_DropDownSubDistrict" class="form-control">
+						<option value="0">--Select Mandi--</option>
+						<option value="3529"></option>
+						<option value="3526">Krishi Upaj Mandi Samiti,Indore</option>
+						<option value="7031">Secretary, krishi upaj mandi samiti mhow</option>
+						<option value="3530">Krishi Upaj Mandi MAxi Road Dewas</option>
+						<option value="3527">Secretary, krishi upaj mandi, khategaon</option>
+						<option value="3531">Secretary, krishi upaj mandi, badnagar</option>
+						<option value="3528">Krishi Upaj Mandi Samiti Agar Road Ujjain</option>
+						<option value="3525">Secretary, krishi upaj mandi, mahidpur,Ujjain</option>
+						<option value="3524">Pandit Laxminarayan Krasi upaj Mandi,Bhopal</option>
+						<option value="6535">Sehore krishi upaj mandi</option>
+
+					</select>
+					<span data-val-controltovalidate="ContentPlaceHolder1_DropDownSubDistrict"
+						data-val-display="Dynamic" data-val-validationgroup="vgRec"
+						id="ContentPlaceHolder1_rfvDropDownSubDistrict" class="star_red" data-val="true"
+						data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid" data-val-initialvalue="0"
+						style="display:none;"><span>* Select Sub
+							District</span></span>
+				</div>
+			</div>
+
+			<div class="col-12 col-sm-2 col-md-2">
+				<div class="form-group">
+					<label>&nbsp;</label>
+					<input type="submit" name="ctl00$ContentPlaceHolder1$btnsubmit" value="Get Report"
+						onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$btnsubmit&quot;, &quot;&quot;, true, &quot;vgRec&quot;, &quot;&quot;, false, false))"
+						id="ContentPlaceHolder1_btnsubmit" class="btn custombtn">
+				</div>
+			</div>
 		</div>
+		<div class="table-responsive-sm">
+			<div id="ContentPlaceHolder1_panel1">
+
+				<div>
+					<div>
+
+			
+
+	<!-- page code end here -->
+
+
+	<div class="pagination_bar">
+		<!-- Pagination -->
+		<ul class="pagination justify-content-center">
+			<li class="page-item">
+				<a class="page-link" href="#" aria-label="Previous">
+					<span aria-hidden="true">&laquo;</span>
+					<span class="sr-only">Previous</span>
+				</a>
+			</li>
+			<li class="page-item">
+				<a class="page-link" href="#">1</a>
+			</li>
+			<li class="page-item">
+				<a class="page-link" href="#">2</a>
+			</li>
+			<li class="page-item">
+				<a class="page-link" href="#">3</a>
+			</li>
+			<li class="page-item">
+				<a class="page-link" href="#" aria-label="Next">
+					<span aria-hidden="true">&raquo;</span>
+					<span class="sr-only">Next</span>
+				</a>
+			</li>
+		</ul>
+	</div>
 
 	</div>
 	<!-- /.container -->
@@ -128,14 +222,15 @@
 			</p>
 			<ul class="social_footer_ul">
 				<li><a href="https://www.facebook.com/profile.php?id=61553585653904"><i
-								class="fab fa-facebook-f"></i></a></li>
+							class="fab fa-facebook-f"></i></a></li>
 				<li><a href="https://t.me/farmsathi"><i class="fab fa-telegram"></i></a>
 				</li>
 				<li><a href="https://wa.me/+14255199579"><i class="fab fa-whatsapp"></i></a>
 				</li>
-				<li><a href="https://instagram.com/farm._sathi?igshid=YzAwZjE1ZTI0Zg=="><i class="fab fa-instagram"></i></a>
+				<li><a href="https://instagram.com/farm._sathi?igshid=YzAwZjE1ZTI0Zg=="><i
+							class="fab fa-instagram"></i></a>
 				</li>
-			 </ul>
+			</ul>
 			<!--social_footer_ul ends here-->
 		</div>
 	</footer>
