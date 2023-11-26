@@ -80,9 +80,6 @@
 
 	
 		
-		<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -120,7 +117,8 @@
             margin-top: 20px;
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
@@ -246,6 +244,24 @@
                 addOption(districtDropdown, "44", "BHOPAL");
                 // Add other districts as needed
             }
+            // Check if the selected state is U.P
+            if (stateDropdown.value === "2") {
+                // Add options for Uttar Pradesh
+                addOption(districtDropdown, "111", "JHANSI");
+                addOption(districtDropdown, "222", "AGRA");
+                addOption(districtDropdown, "333", "MATHURA");
+                addOption(districtDropdown, "444", "ALLAHBAD");
+
+            }
+            // Check if the selected state is GUJARAT
+            if (stateDropdown.value === "3") {
+                // Add options for Uttar Pradesh
+                addOption(districtDropdown, "111", "JHANSI");
+                addOption(districtDropdown, "222", "AGRA");
+                addOption(districtDropdown, "333", "MATHURA");
+                addOption(districtDropdown, "444", "ALLAHBAD");
+
+            }
         }
 
         function showMandiOptions() {
@@ -268,6 +284,7 @@
                 // Add options for INDORE
                 addOption(mandiDropdown, "I1", "Krishi Upaj Mandi Samiti,Indore");
                 addOption(mandiDropdown, "I2", "Secretary, krishi upaj mandi samiti mhow");
+                addOption(mandiDropdown, "I3", "92 ,Nai aalu pyaj mandi");
             }
             // Check if the selected district is UJJAIN
             if (districtDropdown.value === "33") {
@@ -299,13 +316,62 @@
             // Clear previous table content
             dynamicTable.innerHTML = '';
 
-            // Check if the selected mandi is not "Select Mandi"
-            if (mandiDropdown.value !== "0") {
+            // Check if the selected mandi is  "D1"
+            if (mandiDropdown.value == "D1") {
                 // Add rows for the selected mandi
-                addTableRow(dynamicTable, ["Crop 1", "Min Price 1", "Avg Price 1", "Max Price 1", "Last Updated 1"]);
-                addTableRow(dynamicTable, ["Crop 2", "Min Price 2", "Avg Price 2", "Max Price 2", "Last Updated 2"]);
-                // Add more rows as needed
-            } else {
+                addTableRow(dynamicTable, ["Wheat", "1600", "1720", "2050", "4 Day ago"]);
+                addTableRow(dynamicTable, ["Soyabean", "3560", "4300", "5050", "1 Days ago"]);
+                addTableRow(dynamicTable, ["Onion", "1900", "2100", "2550", "3 Days ago"]);
+                addTableRow(dynamicTable, ["Potato", "1110", "1300", "1550", "1 Day ago"]);
+                addTableRow(dynamicTable, ["Garlic", "1760", "1900", "2150", "5 Days ago"]);
+                addTableRow(dynamicTable, ["Gram", "1970", "2367", "2550", "1 Day ago"]);
+
+            }
+            // Check if the selected mandi is  "D2"
+            if (mandiDropdown.value == "D2") {
+                // Add rows for the selected mandi
+                addTableRow(dynamicTable, ["Wheat", "1880", "1980", "2190", "2 Day ago"]);
+                addTableRow(dynamicTable, ["Soyabean", "3560", "4000", "6050", "5 Days ago"]);
+                addTableRow(dynamicTable, ["Onion", "1760", "1900", "2150", "3 Days ago"]);
+                addTableRow(dynamicTable, ["Potato", "8000", "9000", "11050", "1 Day ago"]);
+                addTableRow(dynamicTable, ["Garlic", "1760", "1900", "2150", "2 Days ago"]);
+                addTableRow(dynamicTable, ["Gram", "3060", "4070", "2150", "4 Day ago"]);
+
+            }
+            // Check if the selected mandi is  "D3"
+            if (mandiDropdown.value == "D4") {
+                // Add rows for the selected mandi
+                addTableRow(dynamicTable, ["Wheat", "1760", "1900", "2150", "1 Day ago"]);
+                addTableRow(dynamicTable, ["Soyabean", "1760", "1900", "2150", "5 Days ago"]);
+                addTableRow(dynamicTable, ["Onion", "1760", "1900", "2150", "3 Days ago"]);
+                addTableRow(dynamicTable, ["Potato", "1760", "1900", "2150", "1 Day ago"]);
+                addTableRow(dynamicTable, ["Garlic", "1760", "1900", "2150", "2 Days ago"]);
+                addTableRow(dynamicTable, ["Gram", "1760", "1900", "2150", "1 Day ago"]);
+
+            }
+            // Check if the selected mandi is  "I1"
+            if (mandiDropdown.value == "I1") {
+                // Add rows for the selected mandi
+                addTableRow(dynamicTable, ["Wheat", "1600", "1720", "2050", "4 Day ago"]);
+                addTableRow(dynamicTable, ["Soyabean", "3560", "4300", "5050", "1 Days ago"]);
+                addTableRow(dynamicTable, ["Onion", "1900", "2100", "2550", "3 Days ago"]);
+                addTableRow(dynamicTable, ["Potato", "1110", "1300", "1550", "1 Day ago"]);
+                addTableRow(dynamicTable, ["Garlic", "1760", "1900", "2150", "5 Days ago"]);
+                addTableRow(dynamicTable, ["Gram", "1970", "2367", "2550", "1 Day ago"]);
+            }
+            // Check if the selected mandi is  "I2"
+            if (mandiDropdown.value == "I2") {
+                // Add rows for the selected mandi
+                addTableRow(dynamicTable, ["Wheat", "1780", "1820", "2000", "7 Day ago"]);
+                addTableRow(dynamicTable, ["Soyabean", "5560", "6300", "8000", "1 Days ago"]);
+                addTableRow(dynamicTable, ["Onion", "1770", "2100", "2550", "3 Days ago"]);
+                addTableRow(dynamicTable, ["Potato", "1310", "1400", "1650", "8 Day ago"]);
+                addTableRow(dynamicTable, ["Garlic", "1760", "1900", "2150", "3 Days ago"]);
+                addTableRow(dynamicTable, ["Gram", "1870", "2280", "2670", "2 Day ago"]);
+            }
+          
+
+            else  {
                 // If "Select Mandi" is selected, show the no data message
                 addTableRow(dynamicTable, ["No data available", "", "", "", ""]);
             }
@@ -321,7 +387,6 @@
     </script>
 </body>
 
-</html>
 
 
 
