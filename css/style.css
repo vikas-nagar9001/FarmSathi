@@ -849,4 +849,25 @@ p {
 
 
 
- 
+
+/* WEATHER PAGE POST CSS */
+
+.block-2 {
+    position: relative;
+    display: table;
+    width: 100%;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    background-color: #fbfbfb;
+	margin-top: 40px;
+}
+
+.block-content {
+    position: relative;
+    display: table-cell;
+    overflow: hidden;
+    padding: 20px 30px 20px 30px;
+    vertical-align: top;
+}
