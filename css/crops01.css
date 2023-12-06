@@ -1,7 +1,17 @@
-body{
+/* body{
     background-color: rgb(182, 212, 184);
+} */
+h2{
+    color: red;
 }
 
-.heading1{
-    color: aqua;
+.font{
+    background-color: bisque;
+    
+}
+#heading1{
+    background-color: blue;
+}
+.heading2{
+    color: aquamarine;
 }
