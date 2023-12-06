@@ -2,16 +2,12 @@
     background-color: rgb(182, 212, 184);
 } */
 h2{
+    text-emphasis: greenyellow ;
     color: red;
 }
-
-.font{
-    background-color: bisque;
-    
+table{
+    background-color: aquamarine;
 }
 #heading1{
-    background-color: blue;
-}
-.heading2{
-    color: aquamarine;
+    background-color: brown;
 }
