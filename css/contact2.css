@@ -129,19 +129,18 @@ section {
   margin-bottom: 10px;
   color: #333;
 }
-
 .contact-form .input-box {
   position: relative;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 20px; /* Increase top margin */
 }
 
 .contact-form .input-box input,
-.contact-form .input-box textarea{
+.contact-form .input-box textarea {
   width: 100%;
   padding: 5px 0;
   font-size: 16px;
-  margin: 10px 0;
+  margin: 0; /* Remove margin */
   border: none;
   border-bottom: 2px solid #333;
   outline: none;
@@ -153,24 +152,27 @@ section {
   left: 0;
   padding: 5px 0;
   font-size: 16px;
-  margin: 10px 0;
+  margin: 0; /* Remove margin */
   pointer-events: none;
   transition: 0.5s;
   color: #666;
+  transform-origin: top left;
+  transform: translateY(22px); /* Move label above input field */
 }
 
 .contact-form .input-box input:focus ~ span,
-.contact-form .input-box textarea:focus ~ span{
+.contact-form .input-box textarea:focus ~ span,
+.contact-form .input-box input:not(:placeholder-shown) ~ span,
+.contact-form .input-box textarea:not(:placeholder-shown) ~ span {
   color: #e91e63;
   font-size: 12px;
-  transform: translateY(-20px);
+  transform: translateY(0); /* Move label above input field when focused or input is not empty */
 }
 
-.contact-form .input-box input[type="submit"]
-{
+.contact-form .input-box input[type="submit"] {
   width: 100%;
   background: #4eae3a;
-  color: #FFF;
+  color: #fff;
   border: none;
   cursor: pointer;
   padding: 10px;
@@ -179,9 +181,8 @@ section {
   transition: 0.5s;
 }
 
-.contact-form .input-box input[type="submit"]:hover
-{
-  background: #FFF;
+.contact-form .input-box input[type="submit"]:hover {
+  background: #fff;
   color: #4eae3a;
 }
 
