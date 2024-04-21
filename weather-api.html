@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body>
+    <div id="weatherInfo"></div>
+
+    <script>
+        function getWeather() {
+            var url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/indore?unitGroup=us&include=days&key=WXUFTANUJ6FG2K6FK5FHEC9P8&contentType=json";
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    var weatherInfo = document.getElementById("weatherInfo");
+                    weatherInfo.innerHTML = "Location: " + data.resolvedAddress + "<br>";
+                    weatherInfo.innerHTML += "Temperature: " + data.days[0].tempmax + "°F<br>";
+                    weatherInfo.innerHTML += "Description: " + data.days[0].conditions;
+                })
+                .catch(error => {
+                    console.error('Error fetching weather data:', error);
+                });
+        }
+
+        getWeather(); // Call the function when the page loads
+    </script>
+   
+
+</body>
+</html>
