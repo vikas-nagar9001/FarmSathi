@@ -3,51 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Farm Weather</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome for weather icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #f0fff0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .card-weather {
+            background-color: #e6ffe6;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        .weather-icon {
+            font-size: 3rem;
+            color: #228b22;
+        }
+        .weather-data p {
+            font-size: 18px;
+            color: #228b22;
+        }
+        .btn-get-weather {
+            background-color: #228b22;
+            border: none;
+            color: #fff;
+            padding: 10px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-get-weather:hover {
+            background-color: #1c7d1f;
+        }
+        .form-control {
+            border-color: #228b22;
+        }
+        .form-control:focus {
+            border-color: #1c7d1f;
+            box-shadow: 0 0 0 0.2rem rgba(34, 139, 34, 0.25);
+        }
+    </style>
 </head>
-
-<body class="bg-gradient-to-r from-blue-800 to-blue-500 min-h-screen flex items-center justify-center p-4">
-    <div class="max-w-4xl mx-auto p-4 bg-gradient-to-b from-blue-900 to-blue-700 shadow-lg rounded-lg">
-        <div class="flex justify-between items-center mb-4">
-            <h1 class="text-white text-2xl font-bold">WEATHER FORECAST</h1>
-            <p class="text-white text-lg">05 JUNE 2022</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
-            <div class="bg-blue-800 bg-opacity-75 p-4 rounded-lg shadow">
-                <h2 class="text-white font-semibold">Montana</h2>
-                <img src="https://placehold.co/64x64" alt="Sunny" class="mx-auto">
-                <p class="text-yellow-300 text-3xl">32°</p>
-                <p class="text-blue-300">14° Night</p>
-            </div>
-            <div class="bg-blue-800 bg-opacity-75 p-4 rounded-lg shadow">
-                <h2 class="text-white font-semibold">Nebraska</h2>
-                <img src="https://placehold.co/64x64" alt="Cloudy" class="mx-auto">
-                <p class="text-yellow-300 text-3xl">22°</p>
-                <p class="text-blue-300">10° Night</p>
-            </div>
-            <div class="bg-blue-800 bg-opacity-75 p-4 rounded-lg shadow">
-                <h2 class="text-white font-semibold">Nevada</h2>
-                <img src="https://placehold.co/64x64" alt="Rainy" class="mx-auto">
-                <p class="text-yellow-300 text-3xl">28°</p>
-                <p class="text-blue-300">10° Night</p>
-            </div>
-            <div class="bg-blue-800 bg-opacity-75 p-4 rounded-lg shadow">
-                <h2 class="text-white font-semibold">Hampshire</h2>
-                <img src="https://placehold.co/64x64" alt="Sunny" class="mx-auto">
-                <p class="text-yellow-300 text-3xl">32°</p>
-                <p class="text-blue-300">14° Night</p>
-            </div>
-            <div class="bg-blue-800 bg-opacity-75 p-4 rounded-lg shadow">
-                <h2 class="text-white font-semibold">New Jersey</h2>
-                <img src="https://placehold.co/64x64" alt="Stormy" class="mx-auto">
-                <p class="text-yellow-300 text-3xl">18°</p>
-                <p class="text-blue-300">8° Night</p>
+<body>
+    <!-- weather card -->
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-6">
+                <div class="card card-weather">
+                    <div class="weather-date-location">
+                        <h2 style="font-size: 24px; color: #228b22;">Farm Weather</h2>
+                        <p class="text-muted" style="font-size: 16px;">Plan Your Day</p>
+                    </div>
+                    <div class="weather-data">
+                        <i class="fas fa-cloud-sun weather-icon"></i>
+                        <h1 class="display-3" id="temperature">18<span class="symbol">&deg;</span>C</h1>
+                        <p id="description">Cloudy</p>
+                        <p>Humidity: <span id="humidity">65%</span></p>
+                        <p>Wind Speed: <span id="windSpeed">5 m/s</span></p>
+                    </div>
+                    <div class="weather-date-location">
+                        <input type="text" id="locationInput" placeholder="Enter location..." class="form-control">
+                        <button onclick="getWeather()" class="btn btn-get-weather mt-3">Get Weather</button>
+                    </div>
+                    <div class="card-body p-0 mt-4">
+                        <div class="d-flex flex-wrap justify-content-center weakly-weather" id="weeklyWeather">
+                            <!-- Weather for each day will be populated here -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <script></script>
+    <!-- Bootstrap JS and your custom scripts if needed -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Your custom JavaScript for weather functionality -->
+   <script>
+			function getWeather() {
+
+				var location = document.getElementById("locationInput").value;
+				var url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" + location + "?unitGroup=us&include=days&key=WXUFTANUJ6FG2K6FK5FHEC9P8&contentType=json";
+
+				fetch(url)
+					.then(response => response.json())
+					.then(data => {
+						// Update today's weather
+						var celsiusTemp = fahrenheitToCelsius(data.days[0].tempmax);
+						document.getElementById("temperature").innerHTML = celsiusTemp.toFixed(2) + "<span class='symbol'>&deg;</span>C";
+						document.getElementById("description").innerHTML = data.days[0].conditions;
+
+						// Update day and date
+						var currentDate = new Date();
+						document.getElementById("dayOfWeek").innerText = getCurrentDay(currentDate);
+						document.getElementById("date").innerText = getCurrentDate(currentDate);
+						document.getElementById("location").innerText = location;
+
+						// Update weekly weather
+						var weeklyWeather = document.getElementById("weeklyWeather");
+						weeklyWeather.innerHTML = ""; // Clear previous entries
+						for (var i = 1; i < data.days.length; i++) {
+							var day = data.days[i].datetime;
+							var temperature = fahrenheitToCelsius(data.days[i].tempmax);
+							var iconClass = getIconClass(data.days[i].conditions);
+							weeklyWeather.innerHTML += "<div class='weakly-weather-item'>" +
+								"<p class='mb-1'>" + getDayOfWeek(day) + "</p>" +
+								"<i class='mdi " + iconClass + "'></i>" +
+								"<p class='mb-0'>" + temperature.toFixed(2) + "&deg;</p>" +
+								"</div>";
+						}
+					})
+					.catch(error => {
+						console.error('Error fetching weather data:', error);
+					});
+			}
+
+			function fahrenheitToCelsius(fahrenheit) {
+				return (fahrenheit - 32) * 5 / 9;
+			}
+
+			function getCurrentDay(date) {
+				var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+				return days[date.getDay()];
+			}
+
+			function getCurrentDate(date) {
+				var options = { year: 'numeric', month: 'long', day: 'numeric' };
+				return date.toLocaleDateString('en-US', options);
+			}
+
+			function getDayOfWeek(dateString) {
+				var date = new Date(dateString);
+				var options = { weekday: 'short' };
+				return new Intl.DateTimeFormat('en-US', options).format(date);
+			}
+
+			function getIconClass(condition) {
+				// You can define your own mapping of weather conditions to icon classes here
+				// Example: if(condition === "Cloudy") return "mdi mdi-weather-cloudy";
+				return "mdi mdi-weather-cloudy";
+			}
+
+			// Initial call with default location (Indore)
+			getWeather(); // Call the function with default location when the page loads
+		</script>
 </body>
 </html>
-
-
-</div>
